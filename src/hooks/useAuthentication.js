@@ -32,12 +32,12 @@ import {
 
     try {
 
-      const {user} = createUserWithEmailAndPassword(
+      const {user} = await createUserWithEmailAndPassword(
         auth,
         data.email,
         data.password,
       )
-
+        console.log(user)
       await updateProfile(user, {
             displayName: data.displayName
       })
